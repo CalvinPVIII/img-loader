@@ -6,6 +6,10 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app, origins="*")
 
+@app.route("/")
+def home():
+    return jsonify({"message": "hello world"})
+
 @app.route('/fetch-image', methods=['GET'])
 def fetch_image():
 
